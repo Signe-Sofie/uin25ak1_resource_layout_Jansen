@@ -12,5 +12,14 @@ resources.map(resource => resourceHTML += `
 document.getElementById("navtabs").innerHTML = resourceHTML
 
 function updateContent() {
+    let content = ""
+    resources.map((resource, index) => content += `
+        <h2 id="headtext">${resource.category}</h2>
+        <p>${resource.text}</p>
+        <ul>
+            <il>${resource.sources}</il>
+        </ul>`
+    ) 
     
 }
+document.getElementById("headtext").innerHTML = resourceHTML
