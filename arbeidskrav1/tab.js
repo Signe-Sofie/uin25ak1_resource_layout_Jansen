@@ -1,25 +1,40 @@
+
 let resourceHTML = ""
 
 
 resources.map(resource => resourceHTML += `
             <ul>
                 <li>
-                    <p class="tab">${resource.category}</p>
+                    <p class="tab" onclick="showContent('${resource.category}')" >${resource.category}</p>
                 </li>
             </ul>`
         )
 
 document.getElementById("navtabs").innerHTML = resourceHTML
 
-function updateContent() {
-    let content = ""
-    resources.map((resource, index) => content += `
-        <h2 id="headtext">${resource.category}</h2>
-        <p>${resource.text}</p>
-        <ul>
-            <il>${resource.sources}</il>
-        </ul>`
-    ) 
-    
+function showContent(categoryname) {
+    const filter = resources.filter(resource => resource.category === categoryname)
+    const selectedCategory = filter[0]
+    const contentHTML = `
+        <article>
+            <h2 id="headtext">${selectedCategory.category}</h2>
+            <p id="text">${selectedCategory.text}</p>
+            <nav id="links">
+                <ul>
+                    ${selectedCategory.sources
+                        .map(
+                            source =>
+                                `<li><a href="${source.url}" target="_blank">${source.title}</a></li>`
+                        )
+                        .join('')}
+                </ul>
+            </nav>
+        </article>
+        `
+    document.getElementById("showContent").innerHTML = contentHTML
 }
-document.getElementById("headtext").innerHTML = resourceHTML
+
+showContent("HTML")
+
+
+
