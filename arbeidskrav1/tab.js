@@ -5,7 +5,7 @@ let resourceHTML = ""
 resources.map(resource => resourceHTML += `
             <ul>
                 <li>
-                    <p class="tab" onclick="showContent('${resource.category}')" >${resource.category}</p>
+                    <p id="tab" onclick="showContent('${resource.category}')" >${resource.category}</p>
                 </li>
             </ul>`
         )
