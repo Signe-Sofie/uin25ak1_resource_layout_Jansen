@@ -8,11 +8,11 @@
 
 
 }
-body{
+html, body{
     background: var(--grey);
     margin: 0;
     padding: 0;
-    font-family: "Monterserrat";
+    font-family: "monterserrat", sans-serif;
 }
 
 header {
