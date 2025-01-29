@@ -11,15 +11,12 @@
 }
 html, body{
     background: var(--grey);
-    
-    
     font-family: "Monterserrat", "Roboto", sans-serif;
 }
 
 header {
     
     
-    max-width: ;
     
 }
 
@@ -38,19 +35,17 @@ header nav ul {
 
 #tab {
     background-color: var(--blue);
-    
+    padding: 20px;
     
 }
 
 #tab:hover {
     background-color: var(--white);
+    color: var(--blue);
+    border: none;
 }
 
-nav ul {
-    justify-content: center;
-    
-    
-}
+
 
 
 main {
