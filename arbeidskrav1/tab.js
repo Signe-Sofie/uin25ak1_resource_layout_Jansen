@@ -3,11 +3,9 @@ let resourceHTML = ""
 
 
 resources.map(resource => resourceHTML += `
-            <ul>
-                <li>
-                    <p id="tab" onclick="showContent('${resource.category}')" >${resource.category}</p>
-                </li>
-            </ul>`
+            
+                    <button id="tab" onclick="showContent('${resource.category}')" >${resource.category}</button>
+               `
         )
 
 document.getElementById("navtabs").innerHTML = resourceHTML
